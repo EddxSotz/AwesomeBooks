@@ -16,9 +16,22 @@ function addNewBook(bookTitle, bookAuthor){
 function removeBook(){};
 
 function displayAllBooks(){
-
+  bookListElements.forEach((book) => {
+    let bookListItem = document.createElement('li');
+    const line = document.createElement('hr');
+    bookListItem.innerHTML = `
+    ${book.bookTitle}<br />
+    ${book.bookAuthor} <br />
+    `;
+    const btnRemove = document.createElement('button');
+    btnRemove.innerHTML = 'Remove';
+    bookList.appendChild(bookListItem);
+    bookList.appendChild(btnRemove);
+    bookList.appendChild(line);
+  })
 };
 
+displayAllBooks();
 
 formElement.addEventListener('submit', (event) => {
   event.preventDefault();
