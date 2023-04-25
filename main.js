@@ -14,7 +14,7 @@ class Book {
   }
 
   addNewBook() {
-    const newBook = new Book(newTitle.value, newAuthor.value);
+    const newBook = new Book(title.value, author.value);
     bookListElements.push(newBook);
     localStorage.setItem("books", JSON.stringify(bookListElements));
     displayAllBooks();
