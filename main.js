@@ -5,6 +5,13 @@ let bookListElements = JSON.parse(localStorage.getItem('books')) || [];
 
 /* eslint-disable no-use-before-define */
 
+class Book {
+  constructor (title, author) {
+    this.title = title;
+    this.author = author;
+  }
+}
+
 function displayAllBooks() {
   bookList.innerHTML = '';
   bookListElements.forEach((book) => {
