@@ -14,19 +14,19 @@
   <nav>
     <h1>Awesome books</h1>
     <ul class="nav-menu">
-      <li class="nav-item nav-list">List</li>
+      <li class="nav-item" id="nav-list">List</li>
       <hr>
-      <li class="nav-item nav-add">Add New</li>
+      <li class="nav-item" id="nav-add">Add New</li>
       <hr>
-      <li class="nav-item nav-contact">Contact</li>
+      <li class="nav-item" id="nav-contact">Contact</li>
     </ul>
   </nav>
   <span class="date" id="dateContainer"></span>
 </header>
   <main class="container">
-  <ul id="book_list" class="hidden"></ul>
-  <form action="" id="form">
-    <h1>Add a new book</h1>
+  <ul id="book_list" class=""></ul>
+  <form action="" id="form" class="hidden">
+    <h2>Add a new book</h2>
     <div class="inputContainer">
       <input type="text" id="title" placeholder="Title">
       <input type="text" id="author" placeholder="Author">
@@ -34,6 +34,17 @@
     </div>
     <span id="messageField"></span>
   </form>
+  <div class="contact hidden" id="contact">
+    <h2>Contact Information</h2>
+    <p>Do you have any questions or just want to say "Hello?" <br />
+      You can reach out to us!
+      <ul class="contact-list">
+        <li>Our E-mail: email@email.com</li>
+        <li>Our Phone: 00000000</li>
+        <li>Our Address: Streetname 22, 84503 City, Country</li>
+      </ul>
+    </p>
+  </div>
 </main>
 <footer>Copyright ..</footer>
 </div>

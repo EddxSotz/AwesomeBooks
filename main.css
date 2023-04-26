@@ -71,13 +71,14 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
+  width: 80%;
   margin-inline: auto;
   margin-top: 2rem;
 }
 
 #book_list {
   border: 3px solid black;
+  width: 100%;
 }
 
 #book_list li {
@@ -136,6 +137,20 @@ input {
 #messageField {
   color: red;
   font-size: 1.25rem;
+}
+
+.contact {
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.contact h2 {
+  font-size: 30px;
+}
+
+.contact-list li::before {
+  content: '- ';
 }
 
 footer {

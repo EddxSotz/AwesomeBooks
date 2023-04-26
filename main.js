@@ -1,6 +1,10 @@
 const form = document.getElementById('form');
 const allBooks = document.getElementById('book_list');
 const messageField = document.getElementById('messageField');
+const contact = document.getElementById('contact');
+const navList = document.getElementById('nav-list');
+const navAdd = document.getElementById('nav-add');
+const navContact = document.getElementById('nav-contact');
 
 let bookList = JSON.parse(localStorage.getItem('BooksList')) || []; // global variable to store from localStorage
 
@@ -69,22 +73,32 @@ form.addEventListener('submit', (event) => {
   }
 });
 
-// Date
-
-
-//Change format
-function formatAMPM(date) {
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  let ampm = hours >= 12 ? 'pm' : 'am';
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0'+minutes : minutes;
-  let strTime = hours + ':' + minutes + ' ' + ampm;
-  return strTime;
-}
+//Display date
 
 const dateContainer = document.getElementById('dateContainer');
 let currentDate = new Date();
 dateContainer.innerHTML = currentDate.toLocaleString('en-US');
 
+
+// Show books' list
+navList.addEventListener('click', () => {
+  allBooks.classList.remove('hidden');
+  form.classList.add('hidden');
+  contact.classList.add('hidden');
+});
+
+// Show add section
+
+navAdd.addEventListener('click', () => {
+  allBooks.classList.add('hidden');
+  form.classList.remove('hidden');
+  contact.classList.add('hidden');
+});
+
+// Show Contact
+
+navContact.addEventListener('click', () => {
+  allBooks.classList.add('hidden');
+  form.classList.add('hidden');
+  contact.classList.remove('hidden');
+});
