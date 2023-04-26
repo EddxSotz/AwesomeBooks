@@ -105,3 +105,11 @@ navContact.addEventListener('click', () => {
   contact.classList.remove('hidden');
   contact.classList.add('flex');
 });
+
+
+if (bookList.length === 0) {
+  allBooks.textContent = 'You have no books in your list';
+  allBooks.style.padding = '10px';
+} else {
+  allBooks.style.padding = '0px';
+}
