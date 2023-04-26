@@ -85,6 +85,7 @@ navList.addEventListener('click', () => {
   allBooks.classList.remove('hidden');
   form.classList.add('hidden');
   contact.classList.add('hidden');
+  contact.classList.remove('flex');
 });
 
 // Show add section
@@ -93,6 +94,7 @@ navAdd.addEventListener('click', () => {
   allBooks.classList.add('hidden');
   form.classList.remove('hidden');
   contact.classList.add('hidden');
+  contact.classList.remove('flex');
 });
 
 // Show Contact
