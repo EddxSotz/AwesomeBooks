@@ -1,3 +1,83 @@
-li {
-  list-style: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(244, 244, 244);
+  font-family: 'Comic Neue', cursive;
+  font-weight: bold;
+}
+
+.container {
+  width: 60%;
+  margin-inline: auto;
+  margin-top: 2rem;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#book_list {
+  border: 3px solid black;
+}
+
+#book_list li {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+#book_list li:nth-child(even) {
+  background-color: #cecece;
+}
+
+hr {
+  width: 30%;
+  margin-inline: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+button {
+  background-color: white;
+  border: 2px solid black;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.25rem;
+}
+
+button:hover {
+  cursor: pointer;
+  border: 2px solid #757575;
+  box-shadow: 0 0.5em 0.5em -0.4em #757575;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-inline: auto;
+}
+
+input {
+  border: 3px solid black;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: black;
+  margin-bottom: 2rem;
+}
+
+.btn-add {
+  align-self: flex-end;
+}
+
+#messageField {
+  color: red;
+  font-size: 1.25rem;
 }

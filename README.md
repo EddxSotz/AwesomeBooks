@@ -1,6 +1,6 @@
 <div align="center">
   
-  <h3><b>Awesome Books/b></h3>
+  <h3><b>Awesome Books</h3>
 
 </div>
 
@@ -28,7 +28,7 @@
 # 📖 Awesome Books<a name="about-project"></a>
 
 
-Basic website that allows users to add/remove books from a list by using JavaScript objects and arrays.
+Basic website that allows users to add/remove books from a list by using a JavaScript class along with objects and arrays.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -41,7 +41,7 @@ Basic website that allows users to add/remove books from a list by using JavaScr
 
 ### Key Features <a name="key-features"></a>
 <ul>
-<li>Allows users to add/remove books from a list by using JavaScript objects and arrays.</li>
+<li>Allows users to add/remove books from a list by using a JavaScript class with function methods</li>
 <li>Data is preserved in the browser's memory by using local storage</li>
 </ul>
 
@@ -117,11 +117,15 @@ Install this project with:
 
 - GitHub: [@githubhandle](https://github.com/EddxSotz)
 
+👤 **Romans S.**
+
+- GitHub: [@githubhandle](https://github.com/romans-adi)
+
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
--Implement using classes 
+-Add Navigation bar
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

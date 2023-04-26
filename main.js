@@ -1,45 +1,70 @@
-const formElement = document.getElementById('form');
-const bookList = document.getElementById('book_list');
+const form = document.getElementById('form');
+const allBooks = document.getElementById('book_list');
+const messageField = document.getElementById('messageField');
 
-let bookListElements = JSON.parse(localStorage.getItem('books')) || [];
+let bookList = JSON.parse(localStorage.getItem('BooksList')) || []; // global variable to store from localStorage
 
-/* eslint-disable no-use-before-define */
+// Book class
+class Book {
+  constructor() {
+    this.bookTitle = document.getElementById('title');
+    this.bookAuthor = document.getElementById('author');
+  }
 
-function displayAllBooks() {
-  bookList.innerHTML = '';
-  bookListElements.forEach((book) => {
-    const bookListItem = document.createElement('li');
-    const line = document.createElement('hr');
-    bookListItem.innerHTML = `${book.bookTitle}<br/>${book.bookAuthor} <br/>`;
-    const btnRemove = document.createElement('button');
-    btnRemove.innerHTML = 'Remove';
-    btnRemove.addEventListener('click', () => removeBook(book));
-    bookList.appendChild(bookListItem);
-    bookList.appendChild(btnRemove);
-    bookList.appendChild(line);
-  });
+  // Remove book function takes 'book' parameter from 'displayAllBooks' function and
+  // removes only that element and update local Storage
+  removeBook(book) {
+    bookList = bookList.filter((element) => element !== book);
+    localStorage.setItem('BooksList', JSON.stringify(bookList));
+    this.displayAllBooks();
+  }
+
+  // Clears any previous book list and loops through each book element creating the elements and
+  // calling the 'removeBook' function when user clicks the remove btn
+  displayAllBooks() {
+    allBooks.innerHTML = '';
+    bookList.forEach((book) => {
+      const bookListItem = document.createElement('li');
+      bookListItem.innerHTML = `"${book.bookTitle}" by ${book.bookAuthor}`;
+      const btnRemove = document.createElement('button');
+      btnRemove.innerHTML = 'Remove';
+      btnRemove.className = 'removeButton';
+      btnRemove.addEventListener('click', () => this.removeBook(book));
+      bookListItem.appendChild(btnRemove);
+      allBooks.appendChild(bookListItem);
+      this.bookTitle.value = '';
+      this.bookAuthor.value = '';
+    });
+  }
+
+  // receive the parameters and create an object from them to push it to the
+  // global 'bookList' variable and update local Storage then display all books
+  addBook(bookTitle, bookAuthor) {
+    const newBook = { bookTitle, bookAuthor };
+    bookList.push(newBook);
+    localStorage.setItem('BooksList', JSON.stringify(bookList));
+    this.displayAllBooks();
+    this.bookTitle.value = '';
+    this.bookAuthor.value = '';
+  }
 }
 
-displayAllBooks();
+const newBook = new Book();
+newBook.displayAllBooks(); // display all books by default
 
-function addNewBook(bookTitle, bookAuthor) {
-  const newBook = { bookTitle, bookAuthor };
-  bookListElements.push(newBook);
-  localStorage.setItem('books', JSON.stringify(bookListElements));
-  displayAllBooks();
-}
-
-function removeBook(book) {
-  bookListElements = bookListElements.filter((element) => element !== book);
-  localStorage.setItem('books', JSON.stringify(bookListElements));
-  displayAllBooks();
-}
-
-formElement.addEventListener('submit', (event) => {
+// Listen when form is busmitted and call addBook function with parameters then display all books
+// if not empty and show error message if it is
+form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const bookTitle = document.getElementById('title_input');
-  const bookAuthor = document.getElementById('author_input');
-  addNewBook(bookTitle.value, bookAuthor.value);
-  bookTitle.value = '';
-  bookAuthor.value = '';
+  const bookTitle = document.getElementById('title');
+  const bookAuthor = document.getElementById('author');
+
+  if (bookTitle.value !== '' && bookAuthor.value !== '') {
+    newBook.addBook(bookTitle.value, bookAuthor.value);
+    bookList = JSON.parse(localStorage.getItem('BooksList')) || [];
+    newBook.displayAllBooks();
+    messageField.textContent = '';
+  } else {
+    messageField.textContent = 'Please enter a value';
+  }
 });
