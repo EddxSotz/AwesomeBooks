@@ -101,4 +101,5 @@ navContact.addEventListener('click', () => {
   allBooks.classList.add('hidden');
   form.classList.add('hidden');
   contact.classList.remove('hidden');
+  contact.classList.add('flex');
 });

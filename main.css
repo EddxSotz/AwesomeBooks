@@ -9,6 +9,10 @@
   display: none;
 }
 
+.flex {
+  display: flex;
+}
+
 html,
 body {
   height: 100%;
