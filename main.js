@@ -108,7 +108,7 @@ navContact.addEventListener('click', () => {
 
 
 if (bookList.length === 0) {
-  allBooks.textContent = 'You have no books in your list';
+  allBooks.innerHTML = 'You have no books in your list';
   allBooks.style.padding = '10px';
 } else {
   allBooks.style.padding = '0px';

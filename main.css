@@ -41,11 +41,16 @@ nav {
   flex-wrap: wrap;
 }
 
+nav h1 {
+  padding: 10px;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  padding: 5px 0;
 }
 
 .date {
