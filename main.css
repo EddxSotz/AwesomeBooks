@@ -38,6 +38,7 @@ nav {
   padding: 0 1%;
   border: 2px solid #000;
   margin: 5px auto;
+  flex-wrap: wrap;
 }
 
 .nav-menu {
