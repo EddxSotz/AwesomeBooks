@@ -75,7 +75,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 90%;
   margin-inline: auto;
   margin-top: 2rem;
 }
@@ -158,8 +158,11 @@ input {
 }
 
 footer {
+  border: 2px solid #000;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 10%;
+  width: 90%;
+  padding: 1%;
+  margin-bottom: 1%;
+  place-self: center;
 }
