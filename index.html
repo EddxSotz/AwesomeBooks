@@ -9,21 +9,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>All awesome books</h1>
-  <ul id="book_list"></ul>
-  <hr>
+  <div class="wrapper">
+    <header>
+  <nav>
+    <h1>Awesome books</h1>
+    <ul class="nav-menu">
+      <li class="nav-item nav-list">List</li>
+      <hr>
+      <li class="nav-item nav-add">Add New</li>
+      <hr>
+      <li class="nav-item nav-contact">Contact</li>
+    </ul>
+  </nav>
+  <span class="date" id="dateContainer"></span>
+</header>
+  <main class="container">
+  <ul id="book_list" class="hidden"></ul>
   <form action="" id="form">
     <h1>Add a new book</h1>
     <div class="inputContainer">
       <input type="text" id="title" placeholder="Title">
       <input type="text" id="author" placeholder="Author">
       <button id="submit_btn" class="btn-add" type="submit">Add Book</button>
-    </div>    
+    </div>
     <span id="messageField"></span>
   </form>
+</main>
+<footer>Copyright ..</footer>
 </div>
   <script src="main.js"></script>
-
 </body>
 </html>
