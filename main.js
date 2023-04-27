@@ -75,19 +75,18 @@ form.addEventListener('submit', (event) => {
   }
 });
 
-//Display date function
+// Display date function
 function displayCurrentDateTime() {
   const now = new Date();
   const formattedDateTime = now.toLocaleString();
-  const currentDateTimeElement = document.getElementById("current-date-time");
+  const currentDateTimeElement = document.getElementById('current-date-time');
   currentDateTimeElement.textContent = formattedDateTime;
 }
-//call display date on page load
+// call display date on page load
 displayCurrentDateTime();
 
 // Refresh date and time every second
 setInterval(displayCurrentDateTime, 1000);
-
 
 // Show books' list
 navList.addEventListener('click', () => {
@@ -116,8 +115,7 @@ navContact.addEventListener('click', () => {
   contact.classList.add('flex');
 });
 
-
 if (bookList.length === 0) {
   allBooks.innerHTML = 'You have no books in your list';
   allBooks.style.padding = '10px';
-} 
+}
