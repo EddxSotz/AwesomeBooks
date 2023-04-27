@@ -2,6 +2,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
@@ -10,19 +24,76 @@ body {
   font-weight: bold;
 }
 
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 0 1%;
+  border: 2px solid #000;
+  margin: 5px auto;
+  flex-wrap: wrap;
+}
+
+nav h1 {
+  padding: 10px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 5px 0;
+}
+
+#current-date-time {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5%;
+}
+
+main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-item {
+  display: flex;
+  cursor: pointer;
+  padding: 0 20px;
+  font-size: 1.2rem;
+}
+
+.nav-item:hover {
+  color: #757575;
+}
+
+.nav-menu hr {
+  width: 50%;
+  transform: rotate(90deg);
+}
+
 .container {
-  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
   margin-inline: auto;
   margin-top: 2rem;
 }
 
-.container h1 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
 #book_list {
   border: 3px solid black;
+  width: 100%;
 }
 
 #book_list li {
@@ -38,11 +109,12 @@ body {
   background-color: #cecece;
 }
 
-hr {
-  width: 30%;
-  margin-inline: auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  align-items: center;
 }
 
 button {
@@ -78,6 +150,30 @@ input {
 }
 
 #messageField {
-  color: red;
+  font-size: 1.25rem;
+}
+
+.contact {
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.contact h2 {
+  font-size: 30px;
+}
+
+.contact-list li::before {
+  content: '- ';
+}
+
+footer {
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 1%;
+  margin-bottom: 1%;
+  place-self: center;
   font-size: 1.25rem;
 }

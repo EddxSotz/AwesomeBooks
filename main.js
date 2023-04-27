@@ -1,6 +1,10 @@
 const form = document.getElementById('form');
 const allBooks = document.getElementById('book_list');
 const messageField = document.getElementById('messageField');
+const contact = document.getElementById('contact');
+const navList = document.getElementById('nav-list');
+const navAdd = document.getElementById('nav-add');
+const navContact = document.getElementById('nav-contact');
 
 let bookList = JSON.parse(localStorage.getItem('BooksList')) || []; // global variable to store from localStorage
 
@@ -63,8 +67,55 @@ form.addEventListener('submit', (event) => {
     newBook.addBook(bookTitle.value, bookAuthor.value);
     bookList = JSON.parse(localStorage.getItem('BooksList')) || [];
     newBook.displayAllBooks();
-    messageField.textContent = '';
+    messageField.textContent = 'Book added succesfully!';
+    messageField.style.color = 'black';
   } else {
     messageField.textContent = 'Please enter a value';
+    messageField.style.color = 'red';
   }
 });
+
+// Display date function
+function displayCurrentDateTime() {
+  const now = new Date();
+  const formattedDateTime = now.toLocaleString();
+  const currentDateTimeElement = document.getElementById('current-date-time');
+  currentDateTimeElement.textContent = formattedDateTime;
+}
+// call display date on page load
+displayCurrentDateTime();
+
+// Refresh date and time every second
+setInterval(displayCurrentDateTime, 1000);
+
+// Show books' list
+navList.addEventListener('click', () => {
+  allBooks.classList.remove('hidden');
+  form.classList.add('hidden');
+  contact.classList.add('hidden');
+  contact.classList.remove('flex');
+});
+
+// Show add section
+
+navAdd.addEventListener('click', () => {
+  allBooks.classList.add('hidden');
+  form.classList.remove('hidden');
+  contact.classList.add('hidden');
+  contact.classList.remove('flex');
+  messageField.textContent = '';
+});
+
+// Show Contact
+
+navContact.addEventListener('click', () => {
+  allBooks.classList.add('hidden');
+  form.classList.add('hidden');
+  contact.classList.remove('hidden');
+  contact.classList.add('flex');
+});
+
+if (bookList.length === 0) {
+  allBooks.innerHTML = 'You have no books in your list';
+  allBooks.style.padding = '10px';
+}
