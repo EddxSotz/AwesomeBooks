@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All Awesome Books</title>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="index.css">
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -23,17 +23,28 @@
   </nav>
   <span id="current-date-time"></span>
 </header>
+
   <main class="container">
-  <ul id="book_list" class=""></ul>
-  <form action="" id="form" class="hidden">
-    <h2>Add a new book</h2>
-    <div class="inputContainer">
-      <input type="text" id="title" placeholder="Title">
-      <input type="text" id="author" placeholder="Author">
+
+  <div id="books">
+    <h1 class="mainTitle">All Awesome Books</h1>
+    <ul id="book_list" class=""></ul>
+  </div>
+  
+
+  <div id="addBook">
+    <form action="" id="form" class="hidden">
+      <h2>Add a new book</h2>
+      <div class="inputContainer">
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="author" placeholder="Author">        
+      </div>
       <button id="submit_btn" class="btn-add" type="submit">Add Book</button>
-    </div>
-    <span id="messageField"></span>
-  </form>
+      <span id="messageField"></span>
+    </form>
+  </div>
+  
+
   <div class="contact hidden" id="contact">
     <h2>Contact Information</h2>
     <p>Do you have any questions or just want to say "Hello?" <br />
@@ -46,8 +57,10 @@
     </p>
   </div>
 </main>
+
 <footer>Copyright ..</footer>
 </div>
-  <script src="main.js"></script>
+
+<script type="module" src="index.js"></script>
 </body>
 </html>
