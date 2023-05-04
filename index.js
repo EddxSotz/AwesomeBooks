@@ -6,37 +6,48 @@ import { DateTime } from './modules/luxon.min.js';
 const form = document.getElementById('form');
 const booksList = document.getElementById('book_list');
 const messageField = document.getElementById('messageField');
+
+// HTML different containers
+const addBookContainer = document.getElementById('addBook');
 const contactContainer = document.getElementById('contact');
+const displayBooksContainer = document.getElementById('books');
+
+// HTML Nav link elements
 const bookListNavLink = document.getElementById('nav-list');
 const bookAddNavLink = document.getElementById('nav-add');
 const contactNavLink = document.getElementById('nav-contact');
 const currentDateTimeElement = document.getElementById('current-date-time');
 
-let booksSaved = JSON.parse(localStorage.getItem('BooksList')) || []; // global variable to store from localStorage into array of objects
+// global variable to store from localStorage into array of objects
+let booksSaved = JSON.parse(localStorage.getItem('BooksList')) || [];
 
+// Classes intances
 const addBooks = new AddBookClass();
 const displayBooks = new DisplayBooksClass();
 const removeBookItem = new RemoveBook();
 
+// display books on page load
 displayBooks.showBooksMethod(booksSaved);
+
+// Check first if there are any books saved already on local storage
 if (booksSaved.length === 0) {
-  allBooks.innerHTML = 'You have no books in your list';
-  allBooks.style.padding = '10px';
+  booksSaved.innerHTML = 'You have no books in your list';
+  booksSaved.style.padding = '10px';
 }
 
 // Display date function
 function displayCurrentDateTime() {
-  const formattedDateTime = DateTime.now().toLocaleString(DateTime.DATETIME_MED); 
+  const formattedDateTime = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
   currentDateTimeElement.textContent = formattedDateTime;
 }
 // call display date on page load
 displayCurrentDateTime();
+
 // Refresh date and time every second
 setInterval(displayCurrentDateTime, 1000);
 
-
 // Listen when form is submitted and call addBook method with parameter then display all books..
-// if not empty, and show error message is
+// if not empty, and show error message if it is
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   const bookTitle = document.getElementById('title');
@@ -51,9 +62,8 @@ form.addEventListener('submit', (event) => {
   } else {
     messageField.textContent = 'Please enter a value';
     messageField.style.color = 'red';
-  }  
+  }
 });
-
 
 // remove Book  action
 booksList.addEventListener('click', (element) => {
@@ -65,34 +75,24 @@ booksList.addEventListener('click', (element) => {
   }
 });
 
-
-
-
-
-
-// Show books' section
+// Display Books-List section
 bookListNavLink.addEventListener('click', () => {
-  booksList.classList.remove('hidden');
-  form.classList.add('hidden');
+  displayBooksContainer.classList.remove('hidden');
+  addBookContainer.classList.add('hidden');
   contactContainer.classList.add('hidden');
-  contactContainer.classList.remove('flex');
 });
 
-// Show add section
+// Display the Add-Book section
 bookAddNavLink.addEventListener('click', () => {
-  booksList.classList.add('hidden');
-  form.classList.remove('hidden');
+  addBookContainer.classList.remove('hidden');
+  displayBooksContainer.classList.add('hidden');
   contactContainer.classList.add('hidden');
-  contactContainer.classList.remove('flex');
   messageField.textContent = '';
 });
 
-// Show contactContainer
+// Display Contact section
 contactNavLink.addEventListener('click', () => {
-  booksList.classList.add('hidden');
-  form.classList.add('hidden');
   contactContainer.classList.remove('hidden');
-  contactContainer.classList.add('flex');
+  displayBooksContainer.classList.add('hidden');
+  addBookContainer.classList.add('hidden');
 });
-
-

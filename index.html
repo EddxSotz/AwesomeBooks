@@ -9,32 +9,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="wrapper">
     <header>
-  <nav>
-    <h1>Awesome books</h1>
-    <ul class="nav-menu">
-      <li class="nav-item" id="nav-list">List</li>
-      <hr>
-      <li class="nav-item" id="nav-add">Add New</li>
-      <hr>
-      <li class="nav-item" id="nav-contact">Contact</li>
-    </ul>
-  </nav>
-  <span id="current-date-time"></span>
-</header>
+      <nav>
+        <h1>Awesome books</h1>
+        <ul class="nav-menu">
+          <li class="nav-item" id="nav-list">List</li>        
+          <li class="nav-item" id="nav-add">Add New</li>
+          <li class="nav-item" id="nav-contact">Contact</li>
+        </ul>
+      </nav>
+      <span id="current-date-time"></span>
+    </header>
 
   <main class="container">
 
-  <div id="books">
+  <div id="books" class="">
     <h1 class="mainTitle">All Awesome Books</h1>
-    <ul id="book_list" class=""></ul>
+    <ul id="book_list"></ul>
   </div>
   
 
-  <div id="addBook">
-    <form action="" id="form" class="hidden">
-      <h2>Add a new book</h2>
+  <div id="addBook" class="hidden">
+    <h2>Add a new book</h2>
+    <form action="" id="form">      
       <div class="inputContainer">
         <input type="text" id="title" placeholder="Title">
         <input type="text" id="author" placeholder="Author">        
@@ -45,16 +42,14 @@
   </div>
   
 
-  <div class="contact hidden" id="contact">
+  <div  id="contact" class="hidden">
     <h2>Contact Information</h2>
-    <p>Do you have any questions or just want to say "Hello?" <br />
-      You can reach out to us!
-      <ul class="contact-list">
-        <li>Our E-mail: email@email.com</li>
-        <li>Our Phone: 00000000</li>
-        <li>Our Address: Streetname 22, 84503 City, Country</li>
-      </ul>
-    </p>
+
+    <p>Do you have any questions or just want to say "Hello?"<br>
+    You can reach out to us!<br>  
+    Our E-mail: <a href="mailto:email@email.com">email@email.com</a><br>
+    Our Phone: <a href="tel:500-000-00">500-000-00</a><br>
+    Our Address: Streetname 22, 84503 City, Country</p>
   </div>
 </main>
 
