@@ -9,5 +9,24 @@
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.21.0"
-  }
+  },
+  "name": "AwesomeBooks",
+  "description": "<div align=\"center\">",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EddxSotz/AwesomeBooks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EddxSotz/AwesomeBooks/issues"
+  },
+  "homepage": "https://github.com/EddxSotz/AwesomeBooks#readme"
 }

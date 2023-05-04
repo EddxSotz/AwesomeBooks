@@ -5,49 +5,57 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All Awesome Books</title>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="index.css">
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="wrapper">
     <header>
-  <nav>
-    <h1>Awesome books</h1>
-    <ul class="nav-menu">
-      <li class="nav-item" id="nav-list">List</li>
-      <hr>
-      <li class="nav-item" id="nav-add">Add New</li>
-      <hr>
-      <li class="nav-item" id="nav-contact">Contact</li>
-    </ul>
-  </nav>
-  <span id="current-date-time"></span>
-</header>
+      <nav>
+        <h1>Awesome books</h1>
+        <ul class="nav-menu">
+          <li class="nav-item" id="nav-list">List</li>        
+          <li class="nav-item" id="nav-add">Add New</li>
+          <li class="nav-item" id="nav-contact">Contact</li>
+        </ul>
+      </nav>
+      <span id="current-date-time"></span>
+    </header>
+
   <main class="container">
-  <ul id="book_list" class=""></ul>
-  <form action="" id="form" class="hidden">
+
+  <div id="books" class="">
+    <h1 class="mainTitle">All Awesome Books</h1>
+    <ul id="book_list"></ul>
+  </div>
+  
+
+  <div id="addBook" class="hidden">
     <h2>Add a new book</h2>
-    <div class="inputContainer">
-      <input type="text" id="title" placeholder="Title">
-      <input type="text" id="author" placeholder="Author">
+    <form action="" id="form">      
+      <div class="inputContainer">
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="author" placeholder="Author">        
+      </div>
       <button id="submit_btn" class="btn-add" type="submit">Add Book</button>
-    </div>
-    <span id="messageField"></span>
-  </form>
-  <div class="contact hidden" id="contact">
+      <span id="messageField"></span>
+    </form>
+  </div>
+  
+
+  <div  id="contact" class="hidden">
     <h2>Contact Information</h2>
-    <p>Do you have any questions or just want to say "Hello?" <br />
-      You can reach out to us!
-      <ul class="contact-list">
-        <li>Our E-mail: email@email.com</li>
-        <li>Our Phone: 00000000</li>
-        <li>Our Address: Streetname 22, 84503 City, Country</li>
-      </ul>
-    </p>
+
+    <p>Do you have any questions or just want to say "Hello?"<br>
+    You can reach out to us!<br>  
+    Our E-mail: <a href="mailto:email@email.com">email@email.com</a><br>
+    Our Phone: <a href="tel:500-000-00">500-000-00</a><br>
+    Our Address: Streetname 22, 84503 City, Country</p>
   </div>
 </main>
+
 <footer>Copyright ..</footer>
 </div>
-  <script src="main.js"></script>
+
+<script type="module" src="index.js"></script>
 </body>
 </html>
